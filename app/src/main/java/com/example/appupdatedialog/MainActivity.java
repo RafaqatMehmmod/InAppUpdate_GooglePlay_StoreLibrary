@@ -2,9 +2,11 @@ package com.example.appupdatedialog;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.IntentSender;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.play.core.appupdate.AppUpdateInfo;
@@ -79,6 +81,17 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        //For Update Method ........Restart App..........
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == UPDATE_CODE) {
+            if (resultCode != RESULT_OK) {
+
+            }
+        }
     }
 
 }
